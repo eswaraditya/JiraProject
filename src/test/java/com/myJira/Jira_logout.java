@@ -3,6 +3,7 @@ package com.myJira;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Jira.Utilities.BrowserOperations;
@@ -22,7 +23,10 @@ public class Jira_logout extends BrowserOperations{
 	{
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("(//button[@type='button'])[11]")).click();
+		wait= new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='css-1sqfw5x']/span"))).click();
+		
+		//driver.findElement(By.xpath("(//span[@role='img'])[5]")).click();
 		driver.findElement(By.xpath("//span[text()='Log out']")).click();
 		System.out.println("Test Exceution Done,Browser Closed");
 		et.log(LogStatus.PASS,"Testcase is passed for jiraLogout");

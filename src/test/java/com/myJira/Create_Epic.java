@@ -31,8 +31,18 @@ public class Create_Epic extends BrowserOperations{
 	{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		try
-		{
+		for(int i=0; i<=2;i++){
+			  try{
+				  driver.findElement(By.xpath("//span[text()='Backlog']")).click();
+			    
+			  }
+			  catch(StaleElementReferenceException e){
+				  driver.findElement(By.xpath("//span[text()='Backlog']")).click();
+				  break;
+			  }
+			}
+		
+			driver.findElement(By.xpath("//span[text()='Epics']")).click();
 			driver.findElement(By.xpath("//button[text()='Create epic']")).click();
 			wait= new WebDriverWait(driver, 40);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='customfield_10011']"))).sendKeys(epicName);
@@ -41,18 +51,18 @@ public class Create_Epic extends BrowserOperations{
 			et.log(LogStatus.PASS,"Testcase is passed for createEpic");
 			reports.endTest(et);
 			reports.flush();
-		}
-		catch(Exception e)
-		{
-			//Take screenshot
-			File src=driver.getScreenshotAs(OutputType.FILE);
-			SimpleDateFormat sf=new SimpleDateFormat("dd-MMM-yy-hh-mm-ss");
-			Date dt=new Date();
-			String fname=sf.format(dt)+".png";
-			File dest=new File(fname);
-			FileHandler.copy(src, dest);
-			et.log(LogStatus.FAIL,et.addScreenCapture(fname)+" Testcase is failed for createEpic");
-		}
+		
+//		catch(Exception e)
+//		{
+//			//Take screenshot
+//			File src=driver.getScreenshotAs(OutputType.FILE);
+//			SimpleDateFormat sf=new SimpleDateFormat("dd-MMM-yy-hh-mm-ss");
+//			Date dt=new Date();
+//			String fname=sf.format(dt)+".png";
+//			File dest=new File(fname);
+//			FileHandler.copy(src, dest);
+//			et.log(LogStatus.FAIL,et.addScreenCapture(fname)+" Testcase is failed for createEpic");
+//		}
 		
 	}
 	

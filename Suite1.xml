@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+  <test name="Test1">
+    <classes>
+      <class name="com.myJira.Tests.Login_Test"/>     
+    </classes>
+  </test> 
+  
+  <test name="Test2">
+    <classes>    
+      <class name="com.myJira.Tests.GetProject_Test"/>     
+    </classes>
+  </test>
+  
+  <test name="Test3">
+    <classes>    
+      <class name="com.myJira.Tests.CreateEpic_Test"/>     
+    </classes>
+  </test>
+  
+  <test name="Test4">
+    <classes>    
+      <class name="com.myJira.Tests.CreateUserStory_Test"/>     
+    </classes>
+  </test>
+  
+</suite> <!-- Suite1 -->

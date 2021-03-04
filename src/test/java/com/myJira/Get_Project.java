@@ -26,29 +26,29 @@ public class Get_Project extends BrowserOperations{
 		driver.findElement(By.xpath("//div[text()='Jira Software']")).click();
 		for(int i=0; i<=2;i++){
 			  try{
-				  driver.findElement(By.xpath("//span[text()='Testing']")).click();
+				  driver.findElement(By.xpath("//span[text()='JiraProject']")).click();
 			    
 			  }
 			  catch(StaleElementReferenceException e){
-				  driver.findElement(By.xpath("//span[text()='Testing']")).click();
+				  driver.findElement(By.xpath("//span[text()='JiraProject']")).click();
 				  break;
 			  }
 			}
 		//driver.findElement(By.xpath("//span[text()='Testing']")).click();
 		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		for(int i=0; i<=2;i++){
-			  try{
-				  driver.findElement(By.xpath("//span[text()='Backlog']")).click();
-			    
-			  }
-			  catch(StaleElementReferenceException e){
-				  driver.findElement(By.xpath("//span[text()='Backlog']")).click();
-				  break;
-			  }
-			}
-		
-		driver.findElement(By.xpath("//span[text()='Epics']")).click();
+//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//		for(int i=0; i<=2;i++){
+//			  try{
+//				  driver.findElement(By.xpath("//span[text()='Backlog']")).click();
+//			    
+//			  }
+//			  catch(StaleElementReferenceException e){
+//				  driver.findElement(By.xpath("//span[text()='Backlog']")).click();
+//				  break;
+//			  }
+//			}
+//		
+//		driver.findElement(By.xpath("//span[text()='Epics']")).click();
 		et.log(LogStatus.PASS,"Testcase is passed for getProject");
 		reports.endTest(et);
 		reports.flush();

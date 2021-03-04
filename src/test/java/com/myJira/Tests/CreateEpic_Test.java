@@ -53,11 +53,11 @@ public class CreateEpic_Test extends BrowserOperations{
 		
 	}
 	
-//	@Test(priority=5)
-//	public void Logout()
-//	{
-//		logout.jiraLogout();
-//	}
+	@Test(priority=5)
+	public void Logout()
+	{
+		logout.jiraLogout();
+	}
 
 	@AfterClass
 	public void closesite()

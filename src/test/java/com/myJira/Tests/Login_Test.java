@@ -32,11 +32,11 @@ public class Login_Test {
 		login.jiraLogin();
 	}
 	
-//	@Test(priority=3)
-//	public void Logout()
-//	{
-//		logout.jiraLogout();
-//	}
+	@Test(priority=3)
+	public void Logout()
+	{
+		logout.jiraLogout();
+	}
 
 	@AfterClass
 	public void closesite()

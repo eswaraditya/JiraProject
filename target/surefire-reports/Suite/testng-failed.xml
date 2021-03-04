@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test thread-count="5" verbose="0" name="Test1(failed)">
+    <classes>
+      <class name="com.myJira.Tests.Login_Test">
+        <methods>
+          <include name="Login"/>
+          <include name="openbrowser"/>
+          <include name="closesite"/>
+        </methods>
+      </class> <!-- com.myJira.Tests.Login_Test -->
+      <class name="com.myJira.Tests.GetProject_Test">
+        <methods>
+          <include name="closesite"/>
+          <include name="openbrowser"/>
+          <include name="jiraProject"/>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- com.myJira.Tests.GetProject_Test -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

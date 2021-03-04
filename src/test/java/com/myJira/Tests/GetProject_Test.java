@@ -40,11 +40,11 @@ public class GetProject_Test {
 		jiraproject.getProject();
 	}
 
-//	@Test(priority=4)
-//	public void Logout()
-//	{
-//		logout.jiraLogout();
-//	}
+	@Test(priority=4)
+	public void Logout()
+	{
+		logout.jiraLogout();
+	}
 	
 	@AfterClass
 	public void closesite()

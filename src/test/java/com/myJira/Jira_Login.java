@@ -1,8 +1,10 @@
 package com.myJira;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Jira.Utilities.BrowserOperations;
@@ -20,6 +22,7 @@ public class Jira_Login extends BrowserOperations{
 	ExtentTest et=reports.startTest("Login Test Results");
 	
 	ReadConfig pro = new ReadConfig();
+	
 	String username = pro.getUsername();
 	String password = pro.getPassword();
 	
@@ -34,8 +37,11 @@ public class Jira_Login extends BrowserOperations{
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.xpath("//span[text()='Log in']")).click();
 		et.log(LogStatus.PASS,"Testcase is passed for jiraLogin");
+		
 		reports.endTest(et);
 		reports.flush();
+		
+		
 		
 	}
 

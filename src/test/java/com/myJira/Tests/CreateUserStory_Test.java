@@ -62,11 +62,11 @@ public class CreateUserStory_Test {
 		
 	}
 	
-//	@Test(priority=6)
-//	public void Logout()
-//	{
-//		logout.jiraLogout();
-//	}
+	@Test(priority=6)
+	public void Logout()
+	{
+		logout.jiraLogout();
+	}
 	
 	@AfterClass
 	public void closesite()

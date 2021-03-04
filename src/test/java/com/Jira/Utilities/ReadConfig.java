@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadConfig {
-Properties pro;
+	Properties pro;
 	
 	public ReadConfig()
 	{
@@ -19,6 +19,7 @@ Properties pro;
 		} catch (Exception e) {
 			System.out.println("Exception is " + e.getMessage());
 		}
+		
 	}
 	
 	public String getApplicationURL()
@@ -37,5 +38,11 @@ Properties pro;
 	{
 	String password=pro.getProperty("login.password");
 	return password;
+	}
+	
+	public String getNewProjectName()
+	{
+	String newProjectName=pro.getProperty("new.project.name");
+	return newProjectName;
 	}
 }
